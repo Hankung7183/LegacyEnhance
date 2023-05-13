@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "legacyenhance",
+  "version": "${version}",
+  "name": "LegacyEnhance",
+  "description": "A Minecraft mod for LegacyFabric 1.8.9 that enhances performance and fixes bugs",
+  "authors": [
+    "Hankung"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Hankung7183/LegacyEnhance",
+    "sources": "https://github.com/Hankung7183/LegacyEnhance"
+  },
+  "icon": "assets/legacyenhance/icon.png",
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.hankung.legacyenhance.LegacyEnhance"
+    ],
+    "modmenu": [
+      "me.hankung.legacyenhance.config.ModMenu"
+    ]
+  },
+  "mixins": [
+    "legacyenhance.mixins.json"
+  ],
+  "custom": {
+		"modmenu:clientsideOnly": true
+	},
+  "depends": {
+    "fabricloader": ">=0.14.19",
+    "minecraft": "1.8.9"
+  }
+}

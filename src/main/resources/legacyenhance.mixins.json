@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.hankung.legacyenhance.mixin",
+  "compatibilityLevel": "JAVA_18",
+  "mixins": [],
+  "client": [
+    "betterchat.ChatHudMixin",
+    "betterchat.ChatMessageC2SPacketMixin",
+    "betterchat.ChatScreenMixin",
+    "betterchat.CloseScreenS2CPacketMixin",
+    "betterchat.MinecraftClientMixin",
+    "cleanview.LivingEntityMixin",
+    "hitdelayfix.MinecraftClientMixin",
+    "ingamemultiplayer.GameMenuScreenMixin",
+    "ingamemultiplayer.MultiplayerScreenMixin",
+    "mousebindfix.HandledScreenMixin",
+    "mousedelayfix.LivingEntityMixin",
+    "resourceexploitfix.ClientPlayNetworkHandlerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
