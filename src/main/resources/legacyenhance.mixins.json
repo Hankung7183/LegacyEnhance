@@ -3,6 +3,7 @@
   "minVersion": "0.8",
   "package": "me.hankung.legacyenhance.mixin",
   "compatibilityLevel": "JAVA_18",
+  "plugin": "me.hankung.legacyenhance.mixin.MixinConfigPlugin",
   "mixins": [],
   "client": [
     "betterchat.ChatHudMixin",
@@ -11,6 +12,8 @@
     "betterchat.CloseScreenS2CPacketMixin",
     "betterchat.MinecraftClientMixin",
     "cleanview.LivingEntityMixin",
+    "fastworldswapping.LoadingScreenRendererMixin",
+    "fastworldswapping.MinecraftClientMixin",
     "hitdelayfix.MinecraftClientMixin",
     "ingamemultiplayer.GameMenuScreenMixin",
     "ingamemultiplayer.MultiplayerScreenMixin",
