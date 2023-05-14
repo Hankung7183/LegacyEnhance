@@ -47,13 +47,12 @@ public class LegacyEnhance implements ClientModInitializer {
 		entityCulling.init();
 
 		ClientTickEvents.START_WORLD_TICK.register(e -> {
-            entityCulling.worldTick();
-        });
-		
-        ClientTickEvents.START_CLIENT_TICK.register(e ->
-        {
-            entityCulling.clientTick();
-        });
+			entityCulling.worldTick();
+		});
+
+		ClientTickEvents.START_CLIENT_TICK.register(e -> {
+			entityCulling.clientTick();
+		});
 
 		LOGGER.info("Initalized");
 	}

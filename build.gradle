@@ -12,8 +12,8 @@ repositories {
 		url "https://moehreag.duckdns.org/maven/releases"
 	}
 	maven {
-        url "https://repo.codemc.io/repository/maven-public/"
-    }
+		url "https://repo.codemc.io/repository/maven-public/"
+	}
 }
 
 loom {

@@ -26,7 +26,8 @@
     "mousebindfix.HandledScreenMixin",
     "mousedelayfix.LivingEntityMixin",
     "particleculling.ParticleManagerMixin",
-    "resourceexploitfix.ClientPlayNetworkHandlerMixin"
+    "resourceexploitfix.ClientPlayNetworkHandlerMixin",
+    "staticparticlecolor.ParticleMixin"
   ],
   "injectors": {
     "defaultRequire": 1

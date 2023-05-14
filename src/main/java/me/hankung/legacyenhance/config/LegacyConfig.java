@@ -32,6 +32,7 @@ public class LegacyConfig extends ConfigHolder {
 	public final BooleanOption performanceEntityCullingRNTW = new BooleanOption("Render Nametags Through Walls", true);
 	// ----
 	public final BooleanOption performanceFastWorldSwapping = new BooleanOption("Fast World Swapping", true);
+	public final BooleanOption performanceStaticParticleColor = new BooleanOption("Static Particle Color", true);
 
 	// Security
 	public final OptionCategory security = new OptionCategory("Security");
@@ -83,6 +84,7 @@ public class LegacyConfig extends ConfigHolder {
 
 		performance.add(performanceEntityCulling);
 		performance.add(performanceFastWorldSwapping);
+		performance.add(performanceStaticParticleColor);
 
 		security.add(securityResourceExploit);
 	}
