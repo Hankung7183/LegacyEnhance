@@ -14,7 +14,7 @@ import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
 @Mixin(BlockEntityRenderDispatcher.class)
 public class BlockEntityRenderDispatcherMixin {
     @Inject(method = "renderEntity(Lnet/minecraft/block/entity/BlockEntity;DDDFI)V", at = @At("HEAD"), cancellable = true)
-    public void onRenderEntity(BlockEntity blockEntity, double x, double y, double z, float tickDelta, int destroyProgress, CallbackInfo ci) {
+    public void legacy$onRenderEntity(BlockEntity blockEntity, double x, double y, double z, float tickDelta, int destroyProgress, CallbackInfo ci) {
         if (!((ICullable) blockEntity).isForcedVisible() && ((ICullable) blockEntity).isCulled()) {
             LegacyEnhance.entityCulling.skippedBlockEntities++;
             ci.cancel();

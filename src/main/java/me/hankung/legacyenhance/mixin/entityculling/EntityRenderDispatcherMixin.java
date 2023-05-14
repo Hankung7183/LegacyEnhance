@@ -20,7 +20,7 @@ public abstract class EntityRenderDispatcherMixin {
     public abstract <T extends Entity> EntityRenderer<T> getRenderer(Entity p_getEntityRenderObject_1_);
 
     @Inject(at = @At("HEAD"), method = "method_6913", cancellable = true)
-    public void doRenderEntity(Entity entity, double p_doRenderEntity_2_, double d1, double d2,
+    public void legacy$doRenderEntity(Entity entity, double p_doRenderEntity_2_, double d1, double d2,
             float tickDelta, float p_doRenderEntity_9_, boolean p_doRenderEntity_10_, CallbackInfoReturnable<Boolean> ci) {
         ICullable cullable = (ICullable) entity;
         if (!cullable.isForcedVisible() && cullable.isCulled()) {

@@ -13,7 +13,7 @@ import net.minecraft.network.packet.s2c.play.CloseScreenS2CPacket;
 @Mixin(CloseScreenS2CPacket.class)
 public class CloseScreenS2CPacketMixin {
     @Inject(method = "apply(Lnet/minecraft/network/listener/ClientPlayPacketListener;)V", at = @At("HEAD"), cancellable = true)
-    private void noCloseMyChat(ClientPlayPacketListener handler, CallbackInfo ci) {
+    private void legacy$noCloseMyChat(ClientPlayPacketListener handler, CallbackInfo ci) {
         if (MinecraftClient.getInstance().currentScreen instanceof ChatScreen) {
             ci.cancel();
         }

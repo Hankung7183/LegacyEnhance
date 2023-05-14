@@ -18,7 +18,7 @@ public abstract class MultiplayerScreenMixin {
 	public abstract void connect(ServerInfo entry);
 
 	@Inject(method = "connect(Lnet/minecraft/client/network/ServerInfo;)V", at = {@At("HEAD")}, cancellable = true)
-	private void onConnect(ServerInfo entry, CallbackInfo ci) {
+	private void legacy$onConnect(ServerInfo entry, CallbackInfo ci) {
 		MinecraftClient client = MinecraftClient.getInstance();
 		if (client.getCurrentServerEntry() != null && client.world == null && client.currentScreen instanceof ConnectScreen) {
 			ci.cancel();

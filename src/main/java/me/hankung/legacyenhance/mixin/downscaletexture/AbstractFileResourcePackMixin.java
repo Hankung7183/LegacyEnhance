@@ -21,7 +21,7 @@ public abstract class AbstractFileResourcePackMixin {
     @Shadow protected abstract InputStream openFile(String name) throws IOException;
 
     @Inject(method = "getIcon", at = @At("HEAD"), cancellable = true)
-    private void downscalePackImage(CallbackInfoReturnable<BufferedImage> cir) throws IOException {
+    private void legacy$downscalePackImage(CallbackInfoReturnable<BufferedImage> cir) throws IOException {
         if (!LegacyEnhance.CONFIG.performanceDownscaleTexture.get()) return;
 
         BufferedImage image = TextureUtil.create(this.openFile("pack.png"));

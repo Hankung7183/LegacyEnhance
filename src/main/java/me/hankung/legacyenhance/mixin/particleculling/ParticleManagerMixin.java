@@ -21,7 +21,7 @@ public class ParticleManagerMixin {
             target = "Lnet/minecraft/client/particle/Particle;draw(Lnet/minecraft/client/render/BufferBuilder;Lnet/minecraft/entity/Entity;FFFFFF)V"
         )
     )
-    private void cullParticles(
+    private void legacy$cullParticles(
         Particle instance, BufferBuilder worldRendererIn, Entity entityIn, float partialTicks,
         float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ
     ) {
@@ -34,7 +34,7 @@ public class ParticleManagerMixin {
         method = "updateLayer(Ljava/util/List;)V",
         at = @At(value = "INVOKE", target = "Lnet/minecraft/client/particle/ParticleManager;tickParticle(Lnet/minecraft/client/particle/Particle;)V", shift = At.Shift.AFTER)
     )
-    private Particle checkIfCulled(Particle particle) {
+    private Particle legacy$checkIfCulled(Particle particle) {
         if (ParticleCulling.camera != null) {
             ((IParticle) particle).setCullState(ParticleCulling.camera.isBoxInFrustum(
                 particle.getBoundingBox()

@@ -18,7 +18,7 @@ public class DebugHudMixin {
     }
     
     @Inject(method = "getLeftText", at = @At("RETURN"))
-    public List<String> getLeftText(CallbackInfoReturnable<List<String>> cir) {
+    public List<String> legacy$getLeftText(CallbackInfoReturnable<List<String>> cir) {
         List<String> list = cir.getReturnValue();
         list.add("[Culling] Last pass: " + LegacyEnhance.entityCulling.cullTask.lastTime + "ms");
         list.add("[Culling] Rendered Block Entities: " + LegacyEnhance.entityCulling.renderedBlockEntities + " Skipped: " + LegacyEnhance.entityCulling.skippedBlockEntities);

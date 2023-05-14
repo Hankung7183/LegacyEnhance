@@ -16,10 +16,15 @@ public class LegacyConfig extends ConfigHolder {
 	public final BooleanOption generalCleanView = new BooleanOption("Clean View", false);
 
 	// BetterChat
-	public final OptionCategory betterchat = new OptionCategory("BetterChat");
+	public final OptionCategory betterchat = new OptionCategory("Better Chat");
     public final BooleanOption betterchatCompact = new BooleanOption("Compact", true);
 	public final BooleanOption betterchatTransparent = new BooleanOption("Transparent", false);
     public final BooleanOption betterchatAnimate = new BooleanOption("Smooth", true);
+
+	// Miscellaneous
+	public final OptionCategory miscellaneous = new OptionCategory("Miscellaneous");
+	public final BooleanOption miscellaneousBetterKeybind = new BooleanOption("Better Keybind Handling", true);
+	public final BooleanOption miscellaneousNoAchievement = new BooleanOption("No Achievement Notifications", false);
 
 	// Performance
 	public final OptionCategory performance = new OptionCategory("Performance");
@@ -62,6 +67,7 @@ public class LegacyConfig extends ConfigHolder {
 	public void init() {
 		categories.add(general);
 		categories.add(betterchat);
+		categories.add(miscellaneous);
 		categories.add(performance);
 		categories.add(security);
 
@@ -72,6 +78,9 @@ public class LegacyConfig extends ConfigHolder {
 		betterchat.add(betterchatCompact);
         betterchat.add(betterchatTransparent);
         betterchat.add(betterchatAnimate);
+
+		miscellaneous.add(miscellaneousBetterKeybind);
+		miscellaneous.add(miscellaneousNoAchievement);
 
 		performance.add(performanceDownscaleTexture);
 

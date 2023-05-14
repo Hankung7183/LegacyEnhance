@@ -10,7 +10,7 @@ import net.minecraft.client.particle.Particle;
 @Mixin(Particle.class)
 public class ParticleMixin {
     @Redirect(method = "draw", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/particle/Particle;getLightmapCoordinates(F)I"))
-    private int staticParticleColor(Particle particle, float partialTicks) {
+    private int legacy$staticParticleColor(Particle particle, float partialTicks) {
         return LegacyEnhance.CONFIG.performanceStaticParticleColor.get() ? 15728880 : particle.getLightmapCoordinates(partialTicks);
     }
 }

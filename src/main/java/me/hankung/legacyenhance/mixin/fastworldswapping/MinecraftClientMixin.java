@@ -13,7 +13,7 @@ public class MinecraftClientMixin {
         method = "connect(Lnet/minecraft/client/world/ClientWorld;Ljava/lang/String;)V",
         at = @At(value = "INVOKE", target = "Ljava/lang/System;gc()V")
     )
-    private void fastWorldSwapping() {
+    private void legacy$fastWorldSwapping() {
         if (!LegacyEnhance.CONFIG.performanceFastWorldSwapping.get()) {
             System.gc();
         }

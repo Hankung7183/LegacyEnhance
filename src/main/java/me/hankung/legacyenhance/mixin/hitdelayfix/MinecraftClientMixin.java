@@ -12,7 +12,7 @@ public class MinecraftClientMixin {
     @Shadow private int attackCooldown;
 
     @Inject(method = "doAttack", at = @At("HEAD"))
-    private void doAttackAfter(final CallbackInfo ci) {
+    private void legacy$doAttackAfter(final CallbackInfo ci) {
         attackCooldown = 0;
     }
 }

@@ -11,6 +11,8 @@
     "betterchat.ChatScreenMixin",
     "betterchat.CloseScreenS2CPacketMixin",
     "betterchat.MinecraftClientMixin",
+    "betterkeybind.KeyBindingAccessor",
+    "betterkeybind.MinecraftClientMixin",
     "cleanview.LivingEntityMixin",
     "downscaletexture.AbstractFileResourcePackMixin",
     "entityculling.BlockEntityRenderDispatcherMixin",
@@ -25,6 +27,7 @@
     "ingamemultiplayer.MultiplayerScreenMixin",
     "mousebindfix.HandledScreenMixin",
     "mousedelayfix.LivingEntityMixin",
+    "noachievement.AchievementNotificationMixin",
     "particleculling.ParticleManagerMixin",
     "resourceexploitfix.ClientPlayNetworkHandlerMixin",
     "staticparticlecolor.ParticleMixin"

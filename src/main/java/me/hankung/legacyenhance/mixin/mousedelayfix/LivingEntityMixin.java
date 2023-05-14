@@ -19,7 +19,7 @@ public abstract class LivingEntityMixin extends Entity {
     }
 
     @Inject(method = "getRotationVector", at = @At("HEAD"), cancellable = true)
-    private void mouseDelayFix(float partialTicks, CallbackInfoReturnable<Vec3d> cir) {
+    private void legacy$mouseDelayFix(float partialTicks, CallbackInfoReturnable<Vec3d> cir) {
         if ((LivingEntity) (Object) this instanceof ClientPlayerEntity) {
             cir.setReturnValue(super.getRotationVector(partialTicks));
         }

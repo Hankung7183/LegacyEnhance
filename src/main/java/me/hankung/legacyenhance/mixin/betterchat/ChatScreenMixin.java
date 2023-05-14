@@ -10,7 +10,7 @@ import net.minecraft.client.gui.screen.ChatScreen;
 @Mixin(ChatScreen.class)
 public class ChatScreenMixin {
     @ModifyConstant(method = "init", constant = @Constant(intValue = 100))
-    private int useExtendedChatLength(int original) {
+    private int legacy$useExtendedChatLength(int original) {
         return LegacyEnhance.maxChatLength;
     }
 }

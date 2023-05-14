@@ -47,7 +47,7 @@ public abstract class ChatHudMixin {
     }
 
     @Inject(method = "render", at = @At("HEAD"), cancellable = true)
-    private void modifyChatRendering(CallbackInfo ci) {
+    private void legacy$modifyChatRendering(CallbackInfo ci) {
         if (configuring) {
             ci.cancel();
             return;
@@ -61,7 +61,7 @@ public abstract class ChatHudMixin {
     }
 
     @Inject(method = "render", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/platform/GlStateManager;pushMatrix()V", ordinal = 0, shift = At.Shift.AFTER))
-    private void translate(CallbackInfo ci) {
+    private void legacy$translate(CallbackInfo ci) {
         float y = 0;
         if (LegacyEnhance.CONFIG.betterchatAnimate.get() && !this.hasUnreadNewMessages) {
             y += (9 - 9 * animationPercent) * this.getChatScale();
@@ -70,13 +70,13 @@ public abstract class ChatHudMixin {
     }
 
     @ModifyArg(method = "render", at = @At(value = "INVOKE", target = "Ljava/util/List;get(I)Ljava/lang/Object;", ordinal = 0, remap = false), index = 0)
-    private int getLineBeingDrawn(int line) {
+    private int legacy$getLineBeingDrawn(int line) {
         lineBeingDrawn = line;
         return line;
     }
 
     @ModifyArg(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/font/TextRenderer;drawWithShadow(Ljava/lang/String;FFI)I"), index = 3)
-    private int modifyTextOpacity(int original) {
+    private int legacy$modifyTextOpacity(int original) {
         if (LegacyEnhance.CONFIG.betterchatAnimate.get() && lineBeingDrawn <= newLines) {
             int opacity = (original >> 24) & 0xFF;
             opacity *= animationPercent;
@@ -87,19 +87,19 @@ public abstract class ChatHudMixin {
     }
 
     @Inject(method = "addMessage(Lnet/minecraft/text/Text;I)V", at = @At("HEAD"))
-    private void resetPercentage(CallbackInfo ci) {
+    private void legacy$resetPercentage(CallbackInfo ci) {
         percentComplete = 0;
     }
 
     @ModifyVariable(method = "addMessage(Lnet/minecraft/text/Text;IIZ)V", at = @At("STORE"), ordinal = 0)
-    private List<Text> setNewLines(List<Text> original) {
+    private List<Text> legacy$setNewLines(List<Text> original) {
         newLines = original.size() - 1;
         return original;
     }
 
     // Transparent Chat
     @ModifyArg(method = "render", at = @At(value="INVOKE", ordinal = 0, target="net/minecraft/client/gui/hud/ChatHud.fill(IIIII)V"), index = 4)
-    public int customAlpha(int original) {
+    public int legacy$customAlpha(int original) {
         return LegacyEnhance.CONFIG.betterchatTransparent.get() ? 0 : original;
     }
 
@@ -112,14 +112,14 @@ public abstract class ChatHudMixin {
     public abstract int getVisibleLineCount();
 
     @Inject(method = "getTextAt", at = @At(value = "FIELD", target = "Lnet/minecraft/client/gui/hud/ChatHud;scrolledLines:I"), cancellable = true, locals = LocalCapture.CAPTURE_FAILSOFT)
-    private void stopEventsOutsideWindow(int mouseX, int mouseY, CallbackInfoReturnable<Text> cir, Window window, int i, float f, int j, int k, int l) {
+    private void legacy$stopEventsOutsideWindow(int mouseX, int mouseY, CallbackInfoReturnable<Text> cir, Window window, int i, float f, int j, int k, int l) {
 
         int line = k / client.textRenderer.fontHeight;
         if (line >= getVisibleLineCount()) cir.setReturnValue(null);
     }
 
     @Redirect(method = "removeMessage", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/ChatHudLine;getId()I"))
-    private int checkIfChatLineIsNull(ChatHudLine instance) {
+    private int legacy$checkIfChatLineIsNull(ChatHudLine instance) {
         if (instance == null) return -1;
         return instance.getId();
     }

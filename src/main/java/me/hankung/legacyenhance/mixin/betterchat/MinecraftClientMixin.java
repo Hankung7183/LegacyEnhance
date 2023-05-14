@@ -10,6 +10,6 @@ import net.minecraft.client.gui.hud.ChatHud;
 @Mixin(MinecraftClient.class)
 public class MinecraftClientMixin {
     @Redirect(method = "setScreen", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/ChatHud;clear()V"))
-    private void keepChatMessages(ChatHud instance) {
+    private void legacy$keepChatMessages(ChatHud instance) {
     }
 }

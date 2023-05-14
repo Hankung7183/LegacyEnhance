@@ -10,7 +10,7 @@ import net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket;
 @Mixin(ChatMessageC2SPacket.class)
 public class ChatMessageC2SPacketMixin {
     @ModifyConstant(method = {"<init>(Ljava/lang/String;)V", "read"}, constant = @Constant(intValue = 100))
-    private int useExtendedChatLength(int original) {
+    private int legacy$useExtendedChatLength(int original) {
         return LegacyEnhance.maxChatLength;
     }
 }
