@@ -2,6 +2,7 @@ package me.hankung.legacyenhance;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
+import net.legacyfabric.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.LiteralText;
@@ -13,8 +14,11 @@ import io.github.axolotlclient.AxolotlClientConfig.screen.OptionsScreenBuilder;
 
 import me.hankung.legacyenhance.config.LegacyConfig;
 import me.hankung.legacyenhance.utils.Logger;
+import me.hankung.legacyenhance.utils.culling.EntityCulling;
 
 public class LegacyEnhance implements ClientModInitializer {
+
+	public static EntityCulling entityCulling;
 
 	public static String NAME = "LegacyEnhance";
 	public static int maxChatLength = 256;
@@ -25,6 +29,9 @@ public class LegacyEnhance implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+
+		entityCulling = new EntityCulling();
+
 		CONFIG = new LegacyConfig();
 
 		CONFIG.init();
@@ -36,6 +43,17 @@ public class LegacyEnhance implements ClientModInitializer {
 						FabricLoader.getInstance().getConfigDir().resolve(NAME + ".json"), CONFIG.config));
 		AxolotlClientConfigManager.getInstance().addIgnoredName(NAME, "x");
 		AxolotlClientConfigManager.getInstance().addIgnoredName(NAME, "y");
+
+		entityCulling.init();
+
+		ClientTickEvents.START_WORLD_TICK.register(e -> {
+            entityCulling.worldTick();
+        });
+		
+        ClientTickEvents.START_CLIENT_TICK.register(e ->
+        {
+            entityCulling.clientTick();
+        });
 
 		LOGGER.info("Initalized");
 	}

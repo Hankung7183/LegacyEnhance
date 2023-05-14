@@ -1,6 +1,7 @@
 plugins {
 	id 'fabric-loom' version "1.2-SNAPSHOT"
 	id 'legacy-looming' version "1.2-SNAPSHOT" // Version must be the same as fabric-loom's
+	id "io.freefair.lombok" version "8.0.1"
 }
 
 version = project.mod_version
@@ -10,6 +11,9 @@ repositories {
 	maven {
 		url "https://moehreag.duckdns.org/maven/releases"
 	}
+	maven {
+        url "https://repo.codemc.io/repository/maven-public/"
+    }
 }
 
 loom {
@@ -28,6 +32,11 @@ loom {
     }
 }
 
+configurations {
+    // configuration that holds jars to include in the jar
+    extraLibs
+}
+
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings(legacy.yarn(project.minecraft_version, project.yarn_build))
@@ -41,12 +50,17 @@ dependencies {
 	modImplementation "io.github.axolotlclient:AxolotlClient-config:${project.axolotl_config}+${project.minecraft_version}"
 	include "io.github.axolotlclient:AxolotlClient-config:${project.axolotl_config}+${project.minecraft_version}"
 
+	extraLibs "com.logisticscraft:occlusionculling:0.0.7-SNAPSHOT"
+
 	// Fabric API provides hooks for events, item registration, and more. As most mods will need this, it's included by default. 
 	// If you know for a fact you don't, it's not required and can be safely removed.
 	modImplementation "net.legacyfabric.legacy-fabric-api:legacy-fabric-api:${project.fabric_version}"
 
 	// You can retrieve a specific api module using this notation.
-//	modImplementation(legacy.apiModule("legacy-fabric-item-groups-v1", project.fabric_version))
+	// modImplementation(legacy.apiModule("legacy-fabric-item-groups-v1", project.fabric_version))
+
+	configurations.implementation.extendsFrom(configurations.extraLibs)
+
 }
 
 base {
@@ -83,4 +97,11 @@ jar {
 	from("LICENSE") {
 		rename { "${it}_${base.archivesName.get()}" }
 	}
+	from {
+        configurations.extraLibs.collect { it.isDirectory() ? it : zipTree(it) }
+	}
+}
+
+tasks.withType(Jar) {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

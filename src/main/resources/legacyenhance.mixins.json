@@ -12,6 +12,12 @@
     "betterchat.CloseScreenS2CPacketMixin",
     "betterchat.MinecraftClientMixin",
     "cleanview.LivingEntityMixin",
+    "downscaletexture.AbstractFileResourcePackMixin",
+    "entityculling.BlockEntityRenderDispatcherMixin",
+    "entityculling.CullableMixin",
+    "entityculling.DebugHudMixin",
+    "entityculling.EntityRenderDispatcherMixin",
+    "entityculling.EntityRendererMixin",
     "fastworldswapping.LoadingScreenRendererMixin",
     "fastworldswapping.MinecraftClientMixin",
     "hitdelayfix.MinecraftClientMixin",
@@ -19,6 +25,7 @@
     "ingamemultiplayer.MultiplayerScreenMixin",
     "mousebindfix.HandledScreenMixin",
     "mousedelayfix.LivingEntityMixin",
+    "particleculling.ParticleManagerMixin",
     "resourceexploitfix.ClientPlayNetworkHandlerMixin"
   ],
   "injectors": {

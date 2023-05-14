@@ -5,6 +5,7 @@ import java.util.List;
 
 import io.github.axolotlclient.AxolotlClientConfig.common.ConfigHolder;
 import io.github.axolotlclient.AxolotlClientConfig.options.BooleanOption;
+import io.github.axolotlclient.AxolotlClientConfig.options.EnumOption;
 import io.github.axolotlclient.AxolotlClientConfig.options.Option;
 import io.github.axolotlclient.AxolotlClientConfig.options.OptionCategory;
 
@@ -12,7 +13,7 @@ public class LegacyConfig extends ConfigHolder {
 
 	// General
 	public final OptionCategory general = new OptionCategory("general");
-	public final BooleanOption generalCleanView = new BooleanOption("CleanView", false);
+	public final BooleanOption generalCleanView = new BooleanOption("Clean View", false);
 
 	// BetterChat
 	public final OptionCategory betterchat = new OptionCategory("BetterChat");
@@ -22,6 +23,14 @@ public class LegacyConfig extends ConfigHolder {
 
 	// Performance
 	public final OptionCategory performance = new OptionCategory("Performance");
+	public final BooleanOption performanceDownscaleTexture = new BooleanOption("Downscale Texture", true);
+	// ----
+	public final OptionCategory performanceEntityCulling = new OptionCategory("Entity Culling", true);
+	public final BooleanOption performanceEntityCullingEnabled = new BooleanOption("enabled", true);
+	public final EnumOption performanceEntityCullingInterval = new EnumOption("Culling Interval", new String[]{"10", "25", "50"}, "10");
+	public final BooleanOption performanceEntityCullingCAR = new BooleanOption("Check Armorstand Rules", false);
+	public final BooleanOption performanceEntityCullingRNTW = new BooleanOption("Render Nametags Through Walls", true);
+	// ----
 	public final BooleanOption performanceFastWorldSwapping = new BooleanOption("Fast World Swapping", true);
 
 	// Security
@@ -63,6 +72,16 @@ public class LegacyConfig extends ConfigHolder {
         betterchat.add(betterchatTransparent);
         betterchat.add(betterchatAnimate);
 
+		performance.add(performanceDownscaleTexture);
+
+		performanceEntityCulling.add(
+			performanceEntityCullingEnabled,
+			performanceEntityCullingInterval,
+			performanceEntityCullingCAR,
+			performanceEntityCullingRNTW
+		);
+
+		performance.add(performanceEntityCulling);
 		performance.add(performanceFastWorldSwapping);
 
 		security.add(securityResourceExploit);
