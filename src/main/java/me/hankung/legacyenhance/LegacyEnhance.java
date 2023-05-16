@@ -15,10 +15,12 @@ import io.github.axolotlclient.AxolotlClientConfig.screen.OptionsScreenBuilder;
 import me.hankung.legacyenhance.config.LegacyConfig;
 import me.hankung.legacyenhance.utils.Logger;
 import me.hankung.legacyenhance.utils.culling.EntityCulling;
+import me.hankung.legacyenhance.utils.oldanimation.OldAnimation;
 
 public class LegacyEnhance implements ClientModInitializer {
 
 	public static EntityCulling entityCulling;
+	public static OldAnimation oldAnimation;
 
 	public static String NAME = "LegacyEnhance";
 	public static int maxChatLength = 256;
@@ -31,6 +33,7 @@ public class LegacyEnhance implements ClientModInitializer {
 	public void onInitializeClient() {
 
 		entityCulling = new EntityCulling();
+		oldAnimation = new OldAnimation();
 
 		CONFIG = new LegacyConfig();
 
@@ -45,6 +48,7 @@ public class LegacyEnhance implements ClientModInitializer {
 		AxolotlClientConfigManager.getInstance().addIgnoredName(NAME, "y");
 
 		entityCulling.init();
+		oldAnimation.init();
 
 		ClientTickEvents.START_WORLD_TICK.register(e -> {
 			entityCulling.worldTick();
@@ -52,6 +56,7 @@ public class LegacyEnhance implements ClientModInitializer {
 
 		ClientTickEvents.START_CLIENT_TICK.register(e -> {
 			entityCulling.clientTick();
+			oldAnimation.clientTick();
 		});
 
 		LOGGER.info("Initalized");

@@ -16,11 +16,11 @@ public class MinecraftClientMixin {
     @Inject(method = "closeScreen", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/MouseInput;lockMouse()V"))
     private void legacy$makeKeysReRegister(CallbackInfo ci) {
         if (LegacyEnhance.CONFIG.miscellaneousBetterKeybind.get() && !MinecraftClient.IS_MAC) {
-            updateKeyBindState();
+            legacy$updateKeyBindState();
         }
     }
 
-    private void updateKeyBindState() {
+    private void legacy$updateKeyBindState() {
         for (KeyBinding keybinding : KeyBindingAccessor.getKEYS()) {
             try {
                 final int keyCode = keybinding.getCode();
