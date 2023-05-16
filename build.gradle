@@ -13,6 +13,9 @@ repositories {
 	maven {
 		url "https://repo.codemc.io/repository/maven-public/"
 	}
+	maven {
+		url 'https://jitpack.io'
+	}
 }
 
 loom {
@@ -50,6 +53,9 @@ dependencies {
 	include "io.github.axolotlclient:AxolotlClient-config:${project.axolotl_config}+${project.minecraft_version}"
 
 	extraLibs "com.logisticscraft:occlusionculling:0.0.7-SNAPSHOT"
+
+	extraLibs "com.github.LlamaLad7:MixinExtras:0.1.1"
+    annotationProcessor "com.github.LlamaLad7:MixinExtras:0.1.1"
 
 	// Fabric API provides hooks for events, item registration, and more. As most mods will need this, it's included by default. 
 	// If you know for a fact you don't, it's not required and can be safely removed.

@@ -7,6 +7,8 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
+import com.llamalad7.mixinextras.MixinExtrasBootstrap;
+
 import net.fabricmc.loader.api.FabricLoader;
 
 public class MixinConfigPlugin implements IMixinConfigPlugin {
@@ -14,6 +16,7 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String mixinPackage) {
+        MixinExtrasBootstrap.init();
     }
 
     @Override
@@ -45,4 +48,5 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
     @Override
     public void postApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
     }
+    
 }

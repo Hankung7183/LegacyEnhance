@@ -25,7 +25,9 @@ public class LegacyConfig extends ConfigHolder {
 	// Miscellaneous
 	public final OptionCategory miscellaneous = new OptionCategory("Miscellaneous");
 	public final BooleanOption miscellaneousBetterKeybind = new BooleanOption("Better Keybind Handling", true);
+	public final BooleanOption miscellaneousBetterRomanNumerals = new BooleanOption("Better Roman Numerals", true);
 	public final BooleanOption miscellaneousNoAchievement = new BooleanOption("No Achievement Notifications", false);
+	public final BooleanOption miscellaneousNumericalEnchants = new BooleanOption("Numerical Enchantments", false);
 
 	// OldAnimations
 	public final OptionCategory oldanimate = new OptionCategory("Old Animations");
@@ -103,8 +105,12 @@ public class LegacyConfig extends ConfigHolder {
 			betterchatAnimate
 		);
 
-		miscellaneous.add(miscellaneousBetterKeybind);
-		miscellaneous.add(miscellaneousNoAchievement);
+		miscellaneous.add(
+			miscellaneousBetterKeybind,
+			miscellaneousBetterRomanNumerals,
+			miscellaneousNoAchievement,
+			miscellaneousNumericalEnchants
+		);
 
 		oldanimate.add(
 			oldanimateEnabled,
