@@ -12,7 +12,7 @@ import net.minecraft.network.listener.PacketListener;
 public class NetworkThreadUtilsMixin {
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Redirect(method = "run", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/Packet;apply(Lnet/minecraft/network/listener/PacketListener;)V"))
-    private void patcher$ignorePacketsFromClosedConnections(Packet packet, PacketListener listener) {
+    private void legacy$ignorePacketsFromClosedConnections(Packet packet, PacketListener listener) {
         if (listener instanceof ClientPlayNetworkHandler) {
             if (((ClientPlayNetworkHandler) listener).getClientConnection().isOpen()) {
                 packet.apply(listener);
