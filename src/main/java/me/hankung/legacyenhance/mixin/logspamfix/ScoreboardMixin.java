@@ -26,7 +26,7 @@ public abstract class ScoreboardMixin {
             ci.cancel();
     }
 
-    @Redirect(method = "removeTeam", at = @At(value = "INVOKE", target = "Ljava/util/Map;remove(Ljava/lang/Object;)Ljava/lang/Object;", ordinal = 0, remap = false))
+    @Redirect(method = "removeTeam", at = @At(value = "INVOKE", target = "Ljava/util/Map;remove(Ljava/lang/Object;)Ljava/lang/Object;", ordinal = 0))
     private <K, V> V legacy$checkIfRegisteredNameIsNull(Map<K, V> instance, K o) {
         if (o != null)
             return instance.remove(o);
@@ -39,7 +39,7 @@ public abstract class ScoreboardMixin {
             ci.cancel();
     }
 
-    @Redirect(method = "removeObjective", at = @At(value = "INVOKE", target = "Ljava/util/Map;remove(Ljava/lang/Object;)Ljava/lang/Object;", ordinal = 0, remap = false))
+    @Redirect(method = "removeObjective", at = @At(value = "INVOKE", target = "Ljava/util/Map;remove(Ljava/lang/Object;)Ljava/lang/Object;", ordinal = 0))
     private <K, V> V legacy$checkIfNameIsNull(Map<K, V> instance, K o) {
         if (o != null)
             return instance.remove(o);

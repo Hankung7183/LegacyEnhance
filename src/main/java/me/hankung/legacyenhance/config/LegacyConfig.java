@@ -13,21 +13,23 @@ public class LegacyConfig extends ConfigHolder {
 
 	// General
 	public final OptionCategory general = new OptionCategory("general");
+	public final BooleanOption generalBetterKeybind = new BooleanOption("Better Keybind Handling", true);
+	public final BooleanOption generalBetterRomanNumerals = new BooleanOption("Better Roman Numerals", true);
 	public final BooleanOption generalCleanView = new BooleanOption("Clean View", false);
+	public final BooleanOption generalNoAchievement = new BooleanOption("No Achievement Notifications", false);
+	public final BooleanOption generalNumericalEnchants = new BooleanOption("Numerical Enchantments", false);
+
+	// Bug Fixes
+	public final OptionCategory bugfixes = new OptionCategory("Bug Fixes");
+	public final BooleanOption bugfixesAlexArmsFix = new BooleanOption("Alex Arm Position Fix", true);
+	public final BooleanOption bugfixesResourceExploit = new BooleanOption("Resource Exploit Fix", true);
 
 	// BetterChat
 	public final OptionCategory betterchat = new OptionCategory("Better Chat");
 	public final BooleanOption betterEnabled = new BooleanOption("enabled", true);
     public final BooleanOption betterchatCompact = new BooleanOption("Compact", true);
 	public final BooleanOption betterchatTransparent = new BooleanOption("Transparent", false);
-    public final BooleanOption betterchatAnimate = new BooleanOption("Smooth", true);
-
-	// Miscellaneous
-	public final OptionCategory miscellaneous = new OptionCategory("Miscellaneous");
-	public final BooleanOption miscellaneousBetterKeybind = new BooleanOption("Better Keybind Handling", true);
-	public final BooleanOption miscellaneousBetterRomanNumerals = new BooleanOption("Better Roman Numerals", true);
-	public final BooleanOption miscellaneousNoAchievement = new BooleanOption("No Achievement Notifications", false);
-	public final BooleanOption miscellaneousNumericalEnchants = new BooleanOption("Numerical Enchantments", false);
+    public final BooleanOption betterchatAnimate = new BooleanOption("Smooth", true);	
 
 	// OldAnimations
 	public final OptionCategory oldanimate = new OptionCategory("Old Animations");
@@ -60,11 +62,6 @@ public class LegacyConfig extends ConfigHolder {
 	// ----
 	public final BooleanOption performanceFastWorldSwapping = new BooleanOption("Fast World Swapping", true);
 	public final BooleanOption performanceStaticParticleColor = new BooleanOption("Static Particle Color", true);
-
-	// Security
-	public final OptionCategory security = new OptionCategory("Security");
-	public final BooleanOption securityResourceExploit = new BooleanOption("Resource Exploit Fix", true);
-
 	
 	public final List<io.github.axolotlclient.AxolotlClientConfig.common.options.OptionCategory> config = new ArrayList<>();
 	private final List<Option<?>> options = new ArrayList<>();
@@ -88,28 +85,31 @@ public class LegacyConfig extends ConfigHolder {
 
 	public void init() {
 		categories.add(general);
+		categories.add(bugfixes);
 		categories.add(betterchat);
 		categories.add(oldanimate);
-		categories.add(miscellaneous);
 		categories.add(performance);
-		categories.add(security);
 
 		categories.forEach(io.github.axolotlclient.AxolotlClientConfig.common.options.OptionCategory::clearOptions);
 
-		general.add(generalCleanView);
+		general.add(
+			generalBetterKeybind,
+			generalBetterRomanNumerals,
+			generalCleanView,
+			generalNoAchievement,
+			generalNumericalEnchants
+		);
+
+		bugfixes.add(
+			bugfixesAlexArmsFix,
+			bugfixesResourceExploit
+		);
 
 		betterchat.add(
 			betterEnabled,
 			betterchatCompact,
 			betterchatTransparent,
 			betterchatAnimate
-		);
-
-		miscellaneous.add(
-			miscellaneousBetterKeybind,
-			miscellaneousBetterRomanNumerals,
-			miscellaneousNoAchievement,
-			miscellaneousNumericalEnchants
 		);
 
 		oldanimate.add(
@@ -144,6 +144,5 @@ public class LegacyConfig extends ConfigHolder {
 		performance.add(performanceFastWorldSwapping);
 		performance.add(performanceStaticParticleColor);
 
-		security.add(securityResourceExploit);
 	}
 }

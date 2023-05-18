@@ -20,9 +20,9 @@ public abstract class EnchantmentMixin {
     @Inject(method = "getTranslatedName", at = @At("HEAD"), cancellable = true)
     private void legacy$modifyRomanNumerals(int level, CallbackInfoReturnable<String> cir) {
         String translation = CommonI18n.translate(this.getTranslationKey()) + " ";
-        if (LegacyEnhance.CONFIG.miscellaneousNumericalEnchants.get()) {
+        if (LegacyEnhance.CONFIG.generalNumericalEnchants.get()) {
             cir.setReturnValue(translation + level);
-        } else if (LegacyEnhance.CONFIG.miscellaneousBetterRomanNumerals.get()) {
+        } else if (LegacyEnhance.CONFIG.generalBetterRomanNumerals.get()) {
             cir.setReturnValue(translation + RomanNumerals.toRoman(level));
         }
     }

@@ -30,8 +30,7 @@ public abstract class SoundSystemMixin {
 
     private final List<String> legacy$pausedSounds = new ArrayList<>();
 
-    @SuppressWarnings("InvalidInjectorMethodSignature")
-    @Redirect(method = "pauseAll", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/audio/SoundManager$SoundSystemStarterThread;pause(Ljava/lang/String;)V", remap = false))
+    @Redirect(method = "pauseAll", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sound/SoundSystem$ThreadSafeSoundSystem;pause(Ljava/lang/String;)V"))
     private void legacy$onlyPauseSoundIfNecessary(@Coerce paulscode.sound.SoundSystem soundSystem, String sound) {
         if (isPlaying(field_8195.get(sound))) {
             soundSystem.pause(sound);
@@ -39,7 +38,7 @@ public abstract class SoundSystemMixin {
         }
     }
 
-    @Redirect(method = "resumeAll", at = @At(value = "INVOKE", target = "Ljava/util/Set;iterator()Ljava/util/Iterator;", remap = false))
+    @Redirect(method = "resumeAll", at = @At(value = "INVOKE", target = "Ljava/util/Set;iterator()Ljava/util/Iterator;"))
     private Iterator<String> legacy$iterateOverPausedSounds(Set<String> keySet) {
         return legacy$pausedSounds.iterator();
     }

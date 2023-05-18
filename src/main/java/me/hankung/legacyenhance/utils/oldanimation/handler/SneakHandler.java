@@ -6,8 +6,8 @@ import net.minecraft.entity.player.ClientPlayerEntity;
 
 public class SneakHandler {
 
-    private static final float START_HEIGHT = 1.62F;
-    private static final float END_HEIGHT = 1.54F;
+    // private static final float START_HEIGHT = 1.62F;
+    // private static final float END_HEIGHT = 1.54F;
     private float eyeHeight;
     private float lastEyeHeight;
 

@@ -12,7 +12,7 @@ import net.minecraft.server.command.CommandRegistry;
 public class CommandRegistryMixin {
     @ModifyArg(
         method = { "execute", "getCompletions" },
-        at = @At(value = "INVOKE", target = "Ljava/util/Map;get(Ljava/lang/Object;)Ljava/lang/Object;", remap = false)
+        at = @At(value = "INVOKE", target = "Ljava/util/Map;get(Ljava/lang/Object;)Ljava/lang/Object;")
     )
     private Object legacy$makeLowerCaseForGet(Object s) {
         if (s instanceof String) {
@@ -21,7 +21,7 @@ public class CommandRegistryMixin {
         return s;
     }
 
-    @ModifyArg(method = "registerCommand", at = @At(value = "INVOKE", target = "Ljava/util/Map;put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", remap = false), index = 0)
+    @ModifyArg(method = "registerCommand", at = @At(value = "INVOKE", target = "Ljava/util/Map;put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"), index = 0)
     private Object legacy$makeLowerCaseForPut(Object s) {
         if (s instanceof String) {
             return ((String) s).toLowerCase(Locale.ENGLISH);

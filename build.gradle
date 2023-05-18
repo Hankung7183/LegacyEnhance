@@ -19,6 +19,7 @@ repositories {
 }
 
 loom {
+	
 	// Only needed for versions not available from vanilla launcher by default.
 	// customMinecraftManifest.set("https://meta.legacyfabric.net/v2/manifest/${minecraft_version}")
 
@@ -32,6 +33,7 @@ loom {
 	mixin {
         defaultRefmapName = "${project.refmap_name}"
     }
+
 }
 
 configurations {
@@ -95,7 +97,7 @@ java {
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
 	// if it is present.
 	// If you remove this line, sources will not be generated.
-	withSourcesJar()
+	// withSourcesJar()
 }
 
 jar {

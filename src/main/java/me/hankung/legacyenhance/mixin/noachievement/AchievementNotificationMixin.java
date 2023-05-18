@@ -12,7 +12,7 @@ import net.minecraft.client.gui.AchievementNotification;
 public class AchievementNotificationMixin {
     @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
     private void legacy$cancelRendering(CallbackInfo ci) {
-        if (LegacyEnhance.CONFIG.miscellaneousNoAchievement.get())
+        if (LegacyEnhance.CONFIG.generalNoAchievement.get())
             ci.cancel();
     }
 }

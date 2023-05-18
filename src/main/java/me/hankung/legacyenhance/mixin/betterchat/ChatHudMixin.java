@@ -69,7 +69,7 @@ public abstract class ChatHudMixin {
         GlStateManager.translate(0, y, 0);
     }
 
-    @ModifyArg(method = "render", at = @At(value = "INVOKE", target = "Ljava/util/List;get(I)Ljava/lang/Object;", ordinal = 0, remap = false), index = 0)
+    @ModifyArg(method = "render", at = @At(value = "INVOKE", target = "Ljava/util/List;get(I)Ljava/lang/Object;", ordinal = 0), index = 0)
     private int legacy$getLineBeingDrawn(int line) {
         lineBeingDrawn = line;
         return line;

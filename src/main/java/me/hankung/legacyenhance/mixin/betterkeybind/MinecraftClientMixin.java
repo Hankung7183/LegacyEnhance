@@ -15,7 +15,7 @@ public class MinecraftClientMixin {
 
     @Inject(method = "closeScreen", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/MouseInput;lockMouse()V"))
     private void legacy$makeKeysReRegister(CallbackInfo ci) {
-        if (LegacyEnhance.CONFIG.miscellaneousBetterKeybind.get() && !MinecraftClient.IS_MAC) {
+        if (LegacyEnhance.CONFIG.generalBetterKeybind.get() && !MinecraftClient.IS_MAC) {
             legacy$updateKeyBindState();
         }
     }

@@ -12,7 +12,7 @@ import net.minecraft.resource.ResourcePack;
 
 @Mixin(ResourcePackScreen.class)
 public class ResourcePackScreenMixin {
-    @Inject(method = "buttonClicked", at = @At(value = "INVOKE", target = "Ljava/util/Collections;reverse(Ljava/util/List;)V", remap = false))
+    @Inject(method = "buttonClicked", at = @At(value = "INVOKE", target = "Ljava/util/Collections;reverse(Ljava/util/List;)V"))
     private void legacy$clearHandles(CallbackInfo ci) {
         ResourcePackLoader repository = MinecraftClient.getInstance().getResourcePackLoader();
         for (ResourcePackLoader.Entry entry : repository.getSelectedResourcePacks()) {
