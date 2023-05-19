@@ -34,6 +34,8 @@ loom {
         defaultRefmapName = "${project.refmap_name}"
     }
 
+	accessWidenerPath.set(file("src/main/resources/legacyenhance.accesswidener"))
+
 }
 
 configurations {

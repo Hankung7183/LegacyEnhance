@@ -1,0 +1,6 @@
+accessWidener v1 named
+accessible class net/minecraft/block/RedstoneTorchBlock$TurnOffEntry
+accessible class net/minecraft/client/resource/ResourcePackLoader$Entry
+accessible method net/minecraft/client/resource/ResourcePackLoader$Entry <init> (Lnet/minecraft/client/resource/ResourcePackLoader;Ljava/io/File;)V
+accessible class net/minecraft/client/render/block/entity/BannerBlockEntityRenderer$TextureIdHolder
+accessible method net/minecraft/client/render/block/entity/BannerBlockEntityRenderer$TextureIdHolder <init> ()V

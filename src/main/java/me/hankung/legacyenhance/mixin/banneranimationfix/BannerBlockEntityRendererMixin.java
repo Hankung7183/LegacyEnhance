@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 
 @Mixin(BannerBlockEntityRenderer.class)
 public class BannerBlockEntityRendererMixin {
-    @Redirect(method = "render(Lnet/minecraft/block/entity/BannerBlockEntity;DDDFI)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getTime()J"))
+    @Redirect(method = "render(Lnet/minecraft/block/entity/BannerBlockEntity;DDDFI)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getLastUpdateTime()J"))
     private long legacy$resolveOverflow(World world) {
         return world.getLastUpdateTime() % 100L;
     }

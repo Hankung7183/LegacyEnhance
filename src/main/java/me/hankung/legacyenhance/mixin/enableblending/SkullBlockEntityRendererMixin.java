@@ -12,7 +12,7 @@ import net.minecraft.client.render.block.entity.SkullBlockEntityRenderer;
 
 @Mixin(SkullBlockEntityRenderer.class)
 public class SkullBlockEntityRendererMixin {
-    @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/entity/model/EntityModel;render(Lnet/minecraft/entity/Entity;FFFFFF)V"))
+    @Inject(method = "render(FFFLnet/minecraft/util/math/Direction;FILcom/mojang/authlib/GameProfile;I)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/entity/model/EntityModel;render(Lnet/minecraft/entity/Entity;FFFFFF)V"))
     private void legacy$enableBlending(CallbackInfo ci) {
         GlStateManager.enableBlend();
         GlStateManager.blendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, GL11.GL_ONE, GL11.GL_ZERO);

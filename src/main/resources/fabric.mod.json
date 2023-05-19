@@ -12,6 +12,7 @@
     "sources": "https://github.com/Hankung7183/LegacyEnhance"
   },
   "icon": "assets/legacyenhance/icon.png",
+  "accessWidener": "legacyenhance.accesswidener",
   "license": "MIT",
   "environment": "client",
   "entrypoints": {

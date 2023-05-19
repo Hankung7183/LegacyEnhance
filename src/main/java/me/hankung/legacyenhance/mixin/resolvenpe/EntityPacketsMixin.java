@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class EntityPacketsMixin {
 
     @SuppressWarnings("UnresolvedMixinReference")
-    @Inject(method = { "getEntity", "func_149065_a", "func_149381_a", "func_149161_a" }, at = @At("HEAD"), cancellable = true, remap = false)
+    @Inject(method = { "getEntity", "method_7806", "method_7850", "method_7737" }, at = @At("HEAD"), cancellable = true, remap = false)
     private void legacy$addNullCheck(World worldIn, CallbackInfoReturnable<Entity> cir) {
         if (worldIn == null) {
             cir.setReturnValue(null);

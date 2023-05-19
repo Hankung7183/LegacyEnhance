@@ -16,6 +16,7 @@ public class LegacyConfig extends ConfigHolder {
 	public final BooleanOption generalBetterKeybind = new BooleanOption("Better Keybind Handling", true);
 	public final BooleanOption generalBetterRomanNumerals = new BooleanOption("Better Roman Numerals", true);
 	public final BooleanOption generalCleanView = new BooleanOption("Clean View", false);
+	public final BooleanOption generalFullBright = new BooleanOption("FullBright", true);
 	public final BooleanOption generalNoAchievement = new BooleanOption("No Achievement Notifications", false);
 	public final BooleanOption generalNumericalEnchants = new BooleanOption("Numerical Enchantments", false);
 
@@ -52,6 +53,7 @@ public class LegacyConfig extends ConfigHolder {
 
 	// Performance
 	public final OptionCategory performance = new OptionCategory("Performance");
+	public final BooleanOption performanceBatchModel = new BooleanOption("Batch Model Rendering", true);
 	public final BooleanOption performanceDownscaleTexture = new BooleanOption("Downscale Texture", true);
 	// ----
 	public final OptionCategory performanceEntityCulling = new OptionCategory("Entity Culling", true);
@@ -61,6 +63,7 @@ public class LegacyConfig extends ConfigHolder {
 	public final BooleanOption performanceEntityCullingRNTW = new BooleanOption("Render Nametags Through Walls", true);
 	// ----
 	public final BooleanOption performanceFastWorldSwapping = new BooleanOption("Fast World Swapping", true);
+	public final BooleanOption performanceLowAnimationTick = new BooleanOption("Low Animation Tick", true);
 	public final BooleanOption performanceStaticParticleColor = new BooleanOption("Static Particle Color", true);
 	
 	public final List<io.github.axolotlclient.AxolotlClientConfig.common.options.OptionCategory> config = new ArrayList<>();
@@ -96,6 +99,7 @@ public class LegacyConfig extends ConfigHolder {
 			generalBetterKeybind,
 			generalBetterRomanNumerals,
 			generalCleanView,
+			generalFullBright,
 			generalNoAchievement,
 			generalNumericalEnchants
 		);
@@ -131,7 +135,10 @@ public class LegacyConfig extends ConfigHolder {
 			oldanimateSmoothSneaking
 		);
 
-		performance.add(performanceDownscaleTexture);
+		performance.add(
+			performanceBatchModel,
+			performanceDownscaleTexture
+		);
 
 		performanceEntityCulling.add(
 			performanceEntityCullingEnabled,
@@ -142,6 +149,7 @@ public class LegacyConfig extends ConfigHolder {
 
 		performance.add(performanceEntityCulling);
 		performance.add(performanceFastWorldSwapping);
+		performance.add(performanceLowAnimationTick);
 		performance.add(performanceStaticParticleColor);
 
 	}

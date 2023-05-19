@@ -14,7 +14,6 @@ import net.fabricmc.loader.api.FabricLoader;
 public class MixinConfigPlugin implements IMixinConfigPlugin {
     private final boolean hasAxolotl = FabricLoader.getInstance().isModLoaded("axolotlclient");
     private final boolean hasVanillaFix = FabricLoader.getInstance().isModLoaded("legacyvanillafix");
-    private final boolean hasOptifine = FabricLoader.getInstance().isModLoaded("optifabric");
 
     @Override
     public void onLoad(String mixinPackage) {
@@ -28,9 +27,6 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (hasOptifine && containsAny(mixinClassName, new String[] { "banneranimationfix", "enableblending" })) {
-            return false;
-        }
         if (hasAxolotl && mixinClassName.contains("fastworldswapping.MinecraftClientMixin")) {
             return false;
         }
