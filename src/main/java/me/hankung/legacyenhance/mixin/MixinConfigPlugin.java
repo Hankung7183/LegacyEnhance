@@ -12,6 +12,7 @@ import com.llamalad7.mixinextras.MixinExtrasBootstrap;
 import net.fabricmc.loader.api.FabricLoader;
 
 public class MixinConfigPlugin implements IMixinConfigPlugin {
+    
     private final boolean hasAxolotl = FabricLoader.getInstance().isModLoaded("axolotlclient");
     private final boolean hasVanillaFix = FabricLoader.getInstance().isModLoaded("legacyvanillafix");
 

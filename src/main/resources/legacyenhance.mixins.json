@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "me.hankung.legacyenhance.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_8",
   "plugin": "me.hankung.legacyenhance.mixin.MixinConfigPlugin",
   "overwrites": {
     "conformVisibility": true
@@ -49,8 +49,6 @@
     "entityculling.DebugHudMixin",
     "entityculling.EntityRenderDispatcherMixin",
     "entityculling.EntityRendererMixin",
-    "fastersearching.ResourcePackLoaderAccessor",
-    "fastersearching.ResourcePackLoaderMixin",
     "fastworldswapping.LoadingScreenRendererMixin",
     "fastworldswapping.MinecraftClientMixin",
     "fluidstitching.FluidRendererMixin",
@@ -65,8 +63,7 @@
     "ingamemultiplayer.MultiplayerScreenMixin",
     "instantdimensionswapping.ClientPlayNetworkHandlerMixin",
     "legacyenhance.GameMenuScreenMixin",
-    "limitscan.ChunkOcclusionDataBuilderMixin",
-    "limitscan.WorldRendererMixin",
+    "legacyenhance.TitleScreenMixin",
     "logspamfix.NetworkThreadUtilsMixin",
     "logspamfix.ScoreboardMixin",
     "logspamfix.SoundSystemMixin",

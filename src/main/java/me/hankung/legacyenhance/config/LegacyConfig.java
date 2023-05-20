@@ -12,7 +12,7 @@ import io.github.axolotlclient.AxolotlClientConfig.options.OptionCategory;
 public class LegacyConfig extends ConfigHolder {
 
 	// General
-	public final OptionCategory general = new OptionCategory("general");
+	public final OptionCategory general = new OptionCategory("General");
 	public final BooleanOption generalBetterKeybind = new BooleanOption("Better Keybind Handling", true);
 	public final BooleanOption generalBetterRomanNumerals = new BooleanOption("Better Roman Numerals", true);
 	public final BooleanOption generalCleanView = new BooleanOption("Clean View", false);
