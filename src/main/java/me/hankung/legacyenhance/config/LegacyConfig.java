@@ -13,6 +13,7 @@ public class LegacyConfig extends ConfigHolder {
 
 	// General
 	public final OptionCategory general = new OptionCategory("General");
+	public final BooleanOption generalBetterCam = new BooleanOption("Better Camera", true);
 	public final BooleanOption generalBetterKeybind = new BooleanOption("Better Keybind Handling", true);
 	public final BooleanOption generalBetterRomanNumerals = new BooleanOption("Better Roman Numerals", true);
 	public final BooleanOption generalCleanView = new BooleanOption("Clean View", false);
@@ -64,6 +65,7 @@ public class LegacyConfig extends ConfigHolder {
 	// ----
 	public final BooleanOption performanceFastWorldSwapping = new BooleanOption("Fast World Swapping", true);
 	public final BooleanOption performanceLowAnimationTick = new BooleanOption("Low Animation Tick", true);
+	public final BooleanOption performanceSheepDyeBlendTable = new BooleanOption("Sheep Dye Blend Table", true);
 	public final BooleanOption performanceStaticParticleColor = new BooleanOption("Static Particle Color", true);
 	
 	public final List<io.github.axolotlclient.AxolotlClientConfig.common.options.OptionCategory> config = new ArrayList<>();
@@ -96,6 +98,7 @@ public class LegacyConfig extends ConfigHolder {
 		categories.forEach(io.github.axolotlclient.AxolotlClientConfig.common.options.OptionCategory::clearOptions);
 
 		general.add(
+			generalBetterCam,
 			generalBetterKeybind,
 			generalBetterRomanNumerals,
 			generalCleanView,
@@ -150,6 +153,7 @@ public class LegacyConfig extends ConfigHolder {
 		performance.add(performanceEntityCulling);
 		performance.add(performanceFastWorldSwapping);
 		performance.add(performanceLowAnimationTick);
+		performance.add(performanceSheepDyeBlendTable);
 		performance.add(performanceStaticParticleColor);
 
 	}

@@ -31,7 +31,7 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
         if (hasAxolotl && mixinClassName.contains("fastworldswapping.MinecraftClientMixin")) {
             return false;
         }
-        if (hasVanillaFix && containsAny(mixinClassName, new String[] { "armpositionfix", "particleculling" })) {
+        if (hasVanillaFix && containsAny(mixinClassName, new String[] { "armpositionfix", "particleculling", "bettercamera" })) {
             return false;
         }
         return true;

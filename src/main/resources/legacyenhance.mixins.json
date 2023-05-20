@@ -16,6 +16,7 @@
     "batchdrawing.BufferBuilderAccessor",
     "batchdrawing.ModelPartMixin",
     "batchdrawing.TexturedQuadMixin",
+    "bettercamera.GameRendererMixin",
     "betterchat.ChatHudMixin",
     "betterchat.ChatMessageC2SPacketMixin",
     "betterchat.ChatScreenMixin",
@@ -127,6 +128,7 @@
     "splitremnantsfix.HandledScreenMixin",
     "sprintparticlefix.EntityMixin",
     "staticparticlecolor.ParticleMixin",
+    "surge.SheepEntityMixin",
     "unclosedstream.ThreadedAnvilChunkStorageMixin",
     "uselessanimations.OtherClientPlayerEntityMixin",
     "windowsimefix.ScreenMixin"
