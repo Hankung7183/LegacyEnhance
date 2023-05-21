@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import net.minecraft.client.render.BufferBuilder;
 import net.minecraft.client.render.VertexFormat;
 
-@Mixin(BufferBuilder.class)
+@Mixin(value = BufferBuilder.class, priority = 1500)
 public class BufferBuilderMixin {
 
     @Shadow
