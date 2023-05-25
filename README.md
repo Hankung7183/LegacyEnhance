@@ -49,6 +49,8 @@ No, This mod only supports Minecraft version 1.8.9.
 - Performance
     - including, but not limited to:
         - Batch Model Rendering
+        - Better Entity Tracker
+        - Better Network Stacking (REQUIRE JAVA 17)
         - Better Roman
         - Display Name Caching
         - Downscale Texture
@@ -89,6 +91,7 @@ Mods that can be used to run OptiFine on the Legacy Fabric Mod Loader. It does t
 ## Credits
 - [Better Chat](https://github.com/LlamaLad7/Better-Chat)
 - [Entity Culling](https://github.com/tr7zw/EntityCulling)
+- [Krypton](https://github.com/astei/krypton)
 - [Sk1er OldAnimation Beta](https://github.com/Sk1erLLC)
 - [Sk1er Patcher](https://github.com/Sk1erLLC/Patcher)
 - [Surge](https://github.com/Epoxide-Software/Surge)

@@ -16,6 +16,9 @@ repositories {
 	maven {
 		url 'https://jitpack.io'
 	}
+	maven {
+        url "https://repo.velocitypowered.com/snapshots/"
+    }
 }
 
 loom {
@@ -53,8 +56,9 @@ dependencies {
 	modImplementation "io.github.axolotlclient.AxolotlClient-config:AxolotlClientConfig-common:${project.axolotl_config}"
 	include "io.github.axolotlclient.AxolotlClient-config:AxolotlClientConfig-common:${project.axolotl_config}"
 
-	modImplementation "io.github.axolotlclient:AxolotlClient-config:${project.axolotl_config}+${project.minecraft_version}"
-	include "io.github.axolotlclient:AxolotlClient-config:${project.axolotl_config}+${project.minecraft_version}"
+	modImplementation include("io.github.axolotlclient:AxolotlClient-config:${project.axolotl_config}+${project.minecraft_version}")
+
+	modImplementation include("com.velocitypowered:velocity-native:4.0.0-SNAPSHOT")
 
 	extraLibs "com.logisticscraft:occlusionculling:0.0.7-SNAPSHOT"
 
