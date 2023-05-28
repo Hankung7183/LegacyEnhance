@@ -49,12 +49,12 @@ No, This mod only supports Minecraft version 1.8.9.
 - Performance
     - including, but not limited to:
         - Batch Model Rendering
-        - Better Entity Tracker
-        - Better Network Stacking (REQUIRE JAVA 17)
+        - Better Network Stacking **(REQUIRE JAVA 17)**
         - Better Roman
         - Display Name Caching
         - Downscale Texture
         - Entity Culling
+        - Fast Math
         - Fast World Swapping
         - Instant Dimension Swapping
         - Low Animation Tick
@@ -80,6 +80,14 @@ No, This mod only supports Minecraft version 1.8.9.
         - Ingame Server Switcher
         - Old Animation Mod
 
+## Replacement Mods
+
+LegacyEnhance replicates the functionality provided by these mods, or serves as a superior alternative to them, rendering the use of these mods unnecessary.
+
+- **FPS Plus**
+- **Hit Delay Fix**
+- **Ingame Server Switcher**
+
 ## Recommended Mods
 
 ### [ModMenu](https://github.com/BoogieMonster1O1/ModMenu)
@@ -92,6 +100,7 @@ Mods that can be used to run OptiFine on the Legacy Fabric Mod Loader. It does t
 - [Better Chat](https://github.com/LlamaLad7/Better-Chat)
 - [Entity Culling](https://github.com/tr7zw/EntityCulling)
 - [Krypton](https://github.com/astei/krypton)
+- [Lithium](https://github.com/CaffeineMC/lithium-fabric)
 - [Sk1er OldAnimation Beta](https://github.com/Sk1erLLC)
 - [Sk1er Patcher](https://github.com/Sk1erLLC/Patcher)
 - [Surge](https://github.com/Epoxide-Software/Surge)

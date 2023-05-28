@@ -28,7 +28,7 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (!isModernJava() && containsAny(mixinClassName, new String[] { "pipeline.compression", "pipeline.encryption" })) {
+        if (!isMinimumJava(11) && containsAny(mixinClassName, new String[] { "pipeline.compression", "pipeline.encryption" })) {
             return false;
         }
         if (hasAxolotl && mixinClassName.contains("fastworldswapping.MinecraftClientMixin")) {
@@ -66,11 +66,11 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
         return false;
     }
 
-    private boolean isModernJava() {
+    private boolean isMinimumJava(int java) {
         String version = System.getProperty("java.specification.version");
         int majorVersion = Integer.parseInt(version.split("\\.")[0]);
 
-        return majorVersion >= 17;
+        return majorVersion >= java;
     }
 
 }

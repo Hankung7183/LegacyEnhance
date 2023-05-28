@@ -20,7 +20,7 @@ public class MinecraftCompressDecoder extends ByteToMessageDecoder {
 
     public MinecraftCompressDecoder(int threshold, VelocityCompressor compressor) {
         this.threshold = threshold;
-        this.validate = false;
+        this.validate = true;
         this.compressor = compressor;
     }
 
