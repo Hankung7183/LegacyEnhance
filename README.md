@@ -49,7 +49,7 @@ No, This mod only supports Minecraft version 1.8.9.
 - Performance
     - including, but not limited to:
         - Batch Model Rendering
-        - Better Network Stacking **(REQUIRE JAVA 17)**
+        - Better Network Stacking **(REQUIRE JAVA 11)**
         - Better Roman
         - Display Name Caching
         - Downscale Texture

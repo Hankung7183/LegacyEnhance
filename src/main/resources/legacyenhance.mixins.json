@@ -20,6 +20,7 @@
     "betterchat.ChatHudMixin",
     "betterchat.ChatMessageC2SPacketMixin",
     "betterchat.ChatScreenMixin",
+    "betterchat.ClientPlayNetworkHandlerMixin",
     "betterchat.CloseScreenS2CPacketMixin",
     "betterchat.MinecraftClientMixin",
     "betterkeybind.KeyBindingAccessor",

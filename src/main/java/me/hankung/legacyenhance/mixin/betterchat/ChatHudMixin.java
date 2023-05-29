@@ -42,7 +42,8 @@ public abstract class ChatHudMixin {
     private int lineBeingDrawn;
 
     private void updatePercentage(long diff) {
-        if (percentComplete < 1) percentComplete += 0.004f * diff;
+        if (percentComplete < 1)
+            percentComplete += 0.004f * diff;
         percentComplete = Animation.clamp(percentComplete, 0, 1);
     }
 
@@ -98,7 +99,7 @@ public abstract class ChatHudMixin {
     }
 
     // Transparent Chat
-    @ModifyArg(method = "render", at = @At(value="INVOKE", ordinal = 0, target="net/minecraft/client/gui/hud/ChatHud.fill(IIIII)V"), index = 4)
+    @ModifyArg(method = "render", at = @At(value = "INVOKE", ordinal = 0, target = "net/minecraft/client/gui/hud/ChatHud.fill(IIIII)V"), index = 4)
     public int legacy$customAlpha(int original) {
         return LegacyEnhance.CONFIG.betterchatTransparent.get() ? 0 : original;
     }
@@ -112,15 +113,19 @@ public abstract class ChatHudMixin {
     public abstract int getVisibleLineCount();
 
     @Inject(method = "getTextAt", at = @At(value = "FIELD", target = "Lnet/minecraft/client/gui/hud/ChatHud;scrolledLines:I"), cancellable = true, locals = LocalCapture.CAPTURE_FAILSOFT)
-    private void legacy$stopEventsOutsideWindow(int mouseX, int mouseY, CallbackInfoReturnable<Text> cir, Window window, int i, float f, int j, int k, int l) {
+    private void legacy$stopEventsOutsideWindow(int mouseX, int mouseY, CallbackInfoReturnable<Text> cir, Window window,
+            int i, float f, int j, int k, int l) {
 
         int line = k / client.textRenderer.fontHeight;
-        if (line >= getVisibleLineCount()) cir.setReturnValue(null);
+        if (line >= getVisibleLineCount())
+            cir.setReturnValue(null);
     }
 
     @Redirect(method = "removeMessage", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/ChatHudLine;getId()I"))
     private int legacy$checkIfChatLineIsNull(ChatHudLine instance) {
-        if (instance == null) return -1;
+        if (instance == null)
+            return -1;
         return instance.getId();
     }
+
 }
