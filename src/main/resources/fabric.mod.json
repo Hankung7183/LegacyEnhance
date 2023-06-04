@@ -13,7 +13,7 @@
   },
   "icon": "assets/legacyenhance/icon.png",
   "accessWidener": "legacyenhance.accesswidener",
-  "license": "MIT",
+  "license": "CC-BY-NC-SA",
   "environment": "client",
   "entrypoints": {
     "client": [

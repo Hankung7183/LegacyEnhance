@@ -78,7 +78,6 @@ No, This mod only supports Minecraft version 1.8.9.
         - Clean View
         - Hit Delay Fix
         - Ingame Server Switcher
-        - Old Animation Mod
 
 ## Replacement Mods
 
@@ -94,13 +93,15 @@ LegacyEnhance replicates the functionality provided by these mods, or serves as 
 Mods that adds a screen for viewing a list of installed mods.
 
 ### [OptiFabric](https://github.com/hYdos/OptiFabric)
-Mods that can be used to run OptiFine on the Legacy Fabric Mod Loader. It does this by taking the official OptiFine mod and making it compatible with the Legacy Fabric Mod Loader at runtime. This project does not contain OptiFine, you must download it separately
+Mods that can be used to run OptiFine on the Legacy Fabric Mod Loader. It does this by taking the official OptiFine mod and making it compatible with the Legacy Fabric Mod Loader at runtime. This project does not contain OptiFine, you must download it separately.
+
+### [OverflowAnimationsV2](https://github.com/Hankung7183/OverflowAnimationsV2)
+Mods that combines Overflow Animations (V1) with Sk1er Old Animations code into a singular mod, with bug fixes and additional features.
 
 ## Credits
 - [Better Chat](https://github.com/LlamaLad7/Better-Chat)
 - [Entity Culling](https://github.com/tr7zw/EntityCulling)
 - [Krypton](https://github.com/astei/krypton)
 - [Lithium](https://github.com/CaffeineMC/lithium-fabric)
-- [Sk1er OldAnimation Beta](https://github.com/Sk1erLLC)
 - [Sk1er Patcher](https://github.com/Sk1erLLC/Patcher)
 - [Surge](https://github.com/Epoxide-Software/Surge)
