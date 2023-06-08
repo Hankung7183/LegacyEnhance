@@ -95,9 +95,6 @@ Mods that adds a screen for viewing a list of installed mods.
 ### [OptiFabric](https://github.com/hYdos/OptiFabric)
 Mods that can be used to run OptiFine on the Legacy Fabric Mod Loader. It does this by taking the official OptiFine mod and making it compatible with the Legacy Fabric Mod Loader at runtime. This project does not contain OptiFine, you must download it separately.
 
-### [OverflowAnimationsV2](https://github.com/Hankung7183/OverflowAnimationsV2)
-Mods that combines Overflow Animations (V1) with Sk1er Old Animations code into a singular mod, with bug fixes and additional features.
-
 ## Credits
 - [Better Chat](https://github.com/LlamaLad7/Better-Chat)
 - [Entity Culling](https://github.com/tr7zw/EntityCulling)

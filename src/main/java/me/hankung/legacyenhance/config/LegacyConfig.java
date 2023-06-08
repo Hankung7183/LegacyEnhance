@@ -18,6 +18,7 @@ public class LegacyConfig extends ConfigHolder {
 	public final BooleanOption generalBetterRomanNumerals = new BooleanOption("Better Roman Numerals", true);
 	public final BooleanOption generalCleanView = new BooleanOption("Clean View", false);
 	public final BooleanOption generalFullBright = new BooleanOption("FullBright", true);
+	public final BooleanOption generalHitDelayFix = new BooleanOption("Hit Delay Fix", true);
 	public final BooleanOption generalNoAchievement = new BooleanOption("No Achievement Notifications", false);
 	public final BooleanOption generalNumericalEnchants = new BooleanOption("Numerical Enchantments", false);
 
@@ -83,6 +84,7 @@ public class LegacyConfig extends ConfigHolder {
 			generalBetterRomanNumerals,
 			generalCleanView,
 			generalFullBright,
+			generalHitDelayFix,
 			generalNoAchievement,
 			generalNumericalEnchants
 		);
